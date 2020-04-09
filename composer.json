@@ -1,0 +1,43 @@
+{
+    "name": "btrsco/whoisproxy",
+    "description": "Make Whois Queries Over HTTP Proxy",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Miguel Batres Santellano",
+            "email": "miguel@xand.co",
+            "homepage": "https://xand.co"
+        }
+    ],
+    "homepage": "https://github.com/btrsco/whoisproxy",
+    "keywords": ["Laravel", "WhoisProxy"],
+    "require": {
+        "illuminate/support": "~5|~6|~7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3|~4",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "btrsco\\WhoisProxy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "btrsco\\WhoisProxy\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "btrsco\\WhoisProxy\\WhoisProxyServiceProvider"
+            ],
+            "aliases": {
+                "WhoisProxy": "btrsco\\WhoisProxy\\Facades\\WhoisProxy"
+            }
+        }
+    }
+}
