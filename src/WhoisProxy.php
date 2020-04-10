@@ -165,9 +165,13 @@ class WhoisProxy
         fputs( $connection, "CONNECT $server" );
         fputs( $connection, "$domain" );
 
-        while ( !feof( $connection ) ) $whoisData .= fgets( $connection, 1024 );
+        while ( !feof( $connection ) ) {
+            $loopCount++;
+            $whoisData .= trim( fgets( $connection, 1024 ) ) . PHP_EOL;
+            if ( $loopCount > $this->getMaxLoop() ) break;
+        }
 
-        $this->_terminateConnection( $connection );
+        $this->terminateConnection( $connection );
         return $whoisData;
     }
 
