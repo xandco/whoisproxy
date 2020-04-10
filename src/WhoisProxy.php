@@ -38,13 +38,13 @@ class WhoisProxy
      * WhoisProxy constructor.
      * @param $options
      */
-    public function __construct( $options )
+    public function __construct( $options = [] )
     {
-        $this->setProxyHost( $options['host'] ?? '127.0.0.1' );
-        $this->setProxyPort( $options['port'] ?? 8080 );
-        $this->setTimeout( $options['timeout'] ?? 10 );
-        $this->setDefaultServer( 'whois.iana.org' );
-        $this->setMaxLoop( 512 );
+        $this->setProxyHost( $options['host'] ?? config('whoisproxy.proxy.host') );
+        $this->setProxyPort( $options['port'] ?? config('whoisproxy.proxy.port') );
+        $this->setTimeout( $options['timeout'] ?? config('whoisproxy.connection.timeout') );
+        $this->setDefaultServer( $options['iana'] ?? config('whoisproxy.iana') );
+        $this->setMaxLoop( $options['max-loops'] ?? config('whoisproxy.max-loops') );
     }
 
     /**
