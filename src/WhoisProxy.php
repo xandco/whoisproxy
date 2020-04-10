@@ -169,7 +169,7 @@ class WhoisProxy
      */
     public function parseValue( $key, $haystack )
     {
-        preg_match_all( "/$key(.*)\n/mU", $haystack, $matches, PREG_SET_ORDER, 0 );
+        preg_match_all( "/$key(.*)\n/mU", strtolower( $haystack ), $matches, PREG_SET_ORDER, 0 );
         return empty( $matches ) ? null : trim( $matches[0][1] );
     }
 
