@@ -179,11 +179,17 @@ class WhoisProxy
      * Get Appropriate Whois Server for Future Queries
      * @param $domain
      * @param null $server
-     * @return string
+     * @return string|null
      */
     public function getWhoisServer( $domain, $server = null )
     {
-        $whois = $this->queryWhois( $domain, $server );
-        return $this->parseValue( 'whois:', $whois ) ?? $this->parseValue( 'refer:', $whois );
+        $whoisData = $this->queryWhois( $domain, $server );
+
+        foreach ( config('whoisproxy.patterns.whois') as $pattern ) {
+            $match = $this->parseValue( $pattern, $whoisData );
+            if ( !is_null( $match ) ) return $match;
+        }
+
+        return null;
     }
 }
