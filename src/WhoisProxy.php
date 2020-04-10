@@ -157,8 +157,9 @@ class WhoisProxy
      */
     public function queryWhois( $domain, $server = null )
     {
-        $connection = $this->_initializeConnection();
+        $connection = $this->initializeConnection();
         $whoisData  = "";
+        $loopCount  = 0;
 
         $domain = strtoupper( trim( $domain ) ) . "\r\n";
         $server = strtoupper( $server ? $server : $this->getDefaultServer() ) . ":43\r\n";
