@@ -8,25 +8,26 @@ class WhoisProxy
      * Proxy Host / IP
      * @var $_proxyHost
      */
-    private $_proxyHost;
+    protected $_proxyHost;
 
     /**
      * Proxy Port
      * @var $_proxyPort
      */
-    private $_proxyPort;
+    protected $_proxyPort;
 
     /**
      * Socket Connection Timeout
      * @var $_timeout
      */
-    private $_timeout;
+    protected $_timeout;
 
     /**
      * Default Authoritative Server
      * @var $_defaultServer
      */
-    private $_defaultServer;
+    protected $_defaultServer;
+
 
     /**
      * WhoisProxy constructor.
@@ -44,7 +45,7 @@ class WhoisProxy
      * Get Proxy Host / IP
      * @return mixed
      */
-    public function getProxyHost()
+    protected function getProxyHost()
     {
         return $this->_proxyHost;
     }
@@ -53,7 +54,7 @@ class WhoisProxy
      * Set Proxy Host / IP
      * @param mixed $proxyHost
      */
-    public function setProxyHost( $proxyHost ): void
+    protected function setProxyHost( $proxyHost ): void
     {
         $this->_proxyHost = $proxyHost;
     }
@@ -62,7 +63,7 @@ class WhoisProxy
      * Get Proxy Port
      * @return mixed
      */
-    public function getProxyPort()
+    protected function getProxyPort()
     {
         return $this->_proxyPort;
     }
@@ -71,7 +72,7 @@ class WhoisProxy
      * Set Proxy Port
      * @param mixed $proxyPort
      */
-    public function setProxyPort( $proxyPort ): void
+    protected function setProxyPort( $proxyPort ): void
     {
         $this->_proxyPort = $proxyPort;
     }
@@ -80,7 +81,7 @@ class WhoisProxy
      * Get Socket Connection Timeout
      * @return mixed
      */
-    public function getTimeout()
+    protected function getTimeout()
     {
         return $this->_timeout;
     }
@@ -89,7 +90,7 @@ class WhoisProxy
      * Set Socket Connection Timeout
      * @param mixed $timeout
      */
-    public function setTimeout($timeout): void
+    protected function setTimeout( $timeout ): void
     {
         $this->_timeout = $timeout;
     }
@@ -98,7 +99,7 @@ class WhoisProxy
      * Get Authoritative Server
      * @return mixed
      */
-    public function getDefaultServer()
+    protected function getDefaultServer()
     {
         return $this->_defaultServer;
     }
@@ -107,7 +108,7 @@ class WhoisProxy
      * Set Authoritative Server
      * @param mixed $defaultServer
      */
-    public function setDefaultServer( $defaultServer ): void
+    protected function setDefaultServer( $defaultServer ): void
     {
         $this->_defaultServer = $defaultServer;
     }
@@ -116,7 +117,7 @@ class WhoisProxy
      * Initialize HTTP Proxy Connection
      * @return mixed
      */
-    public function _initializeConnection()
+    protected function initializeConnection()
     {
         return fsockopen(
             $this->getProxyHost(),
@@ -131,7 +132,7 @@ class WhoisProxy
      * Terminate HTTP Proxy Connection
      * @param $connection
      */
-    public function _terminateConnection( $connection )
+    protected function terminateConnection( $connection )
     {
         fclose( $connection );
     }
