@@ -28,6 +28,11 @@ class WhoisProxy
      */
     protected $_defaultServer;
 
+    /**
+     * Max Loop Count
+     * @var $_maxLoop
+     */
+    protected $_maxLoop;
 
     /**
      * WhoisProxy constructor.
@@ -39,6 +44,7 @@ class WhoisProxy
         $this->setProxyPort( $options['port'] ?? 8080 );
         $this->setTimeout( $options['timeout'] ?? 10 );
         $this->setDefaultServer( 'whois.iana.org' );
+        $this->setMaxLoop( 512 );
     }
 
     /**
@@ -111,6 +117,24 @@ class WhoisProxy
     protected function setDefaultServer( $defaultServer ): void
     {
         $this->_defaultServer = $defaultServer;
+    }
+
+    /**
+     * Get Max Loop Count
+     * @return mixed
+     */
+    public function getMaxLoop()
+    {
+        return $this->_maxLoop;
+    }
+
+    /**
+     * Set Max Loop Count
+     * @param mixed $maxLoop
+     */
+    public function setMaxLoop( $maxLoop ): void
+    {
+        $this->_maxLoop = $maxLoop;
     }
 
     /**
