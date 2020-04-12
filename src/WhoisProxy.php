@@ -123,7 +123,7 @@ class WhoisProxy
      * Get Max Loop Count
      * @return mixed
      */
-    public function getMaxLoop()
+    protected function getMaxLoop()
     {
         return $this->_maxLoop;
     }
@@ -132,7 +132,7 @@ class WhoisProxy
      * Set Max Loop Count
      * @param mixed $maxLoop
      */
-    public function setMaxLoop( $maxLoop ): void
+    protected function setMaxLoop( $maxLoop ): void
     {
         $this->_maxLoop = $maxLoop;
     }
