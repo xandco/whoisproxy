@@ -2,6 +2,8 @@
 
 namespace btrsco\WhoisProxy;
 
+use btrsco\WhoisProxy\Exceptions\WhoisProxyException;
+
 class WhoisProxy
 {
     /**
@@ -138,6 +140,17 @@ class WhoisProxy
     }
 
     /**
+     * Return Http Status Code from String
+     * @param $httpStatus
+     * @return string|null
+     */
+    protected function _parseHttpStatus( $httpStatus )
+    {
+        preg_match_all( "/HTTP\/1.1 (\d+) .*/m", $httpStatus, $matches, PREG_SET_ORDER, 0 );
+        return empty( $matches ) ? null : $matches[0][1];
+    }
+
+    /**
      * Initialize HTTP Proxy Connection
      * @return mixed
      */
@@ -178,6 +191,7 @@ class WhoisProxy
      * @param $domain
      * @param null $server
      * @return string
+     * @throws WhoisProxyException
      */
     public function queryWhois( $domain, $server = null )
     {
@@ -198,7 +212,15 @@ class WhoisProxy
         }
 
         $this->terminateConnection( $connection );
-        return $whoisData;
+
+        $finalOutput = explode( "\n", $whoisData );
+        $httpStatus  = (int)$this->_parseHttpStatus( $finalOutput[0] );
+        $finalOutput = array_slice( $finalOutput, 2 );
+        $finalOutput = implode( "\n", $finalOutput );
+
+        if ( $httpStatus !== 200 || is_null( $httpStatus ) ) throw new WhoisProxyException( "Encountered an error while trying to access whois server.", $status );
+
+        return $finalOutput;
     }
 
     /**
@@ -206,6 +228,7 @@ class WhoisProxy
      * @param $domain
      * @param null $server
      * @return string|null
+     * @throws WhoisProxyException
      */
     public function getWhoisServer( $domain, $server = null )
     {
