@@ -1,6 +1,6 @@
 {
     "name": "btrsco/whoisproxy",
-    "description": "Make Whois Queries Over HTTP Proxy",
+    "description": "Whois Proxy, queries whois servers over http proxy.",
     "license": "proprietary",
     "authors": [
         {
