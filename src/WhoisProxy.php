@@ -218,7 +218,7 @@ class WhoisProxy
         $finalOutput = array_slice( $finalOutput, 2 );
         $finalOutput = implode( "\n", $finalOutput );
 
-        if ( $httpStatus !== 200 || is_null( $httpStatus ) ) throw new WhoisProxyException( "Encountered an error while trying to access whois server.", $status );
+        if ( $httpStatus !== 200 || is_null( $httpStatus ) ) throw new WhoisProxyException( "Encountered an error while trying to access whois server.", $httpStatus );
 
         return $finalOutput;
     }
