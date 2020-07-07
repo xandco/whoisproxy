@@ -12,7 +12,7 @@ This is where your description should go. Take a look at [contributing.md](contr
 Via Composer
 
 ``` bash
-$ composer require btrsco/whoisproxy
+$ composer require xandco/whoisproxy
 ```
 
 ## Usage
@@ -44,14 +44,14 @@ If you discover any security related issues, please email author email instead o
 
 license. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/btrsco/whoisproxy.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/btrsco/whoisproxy.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/btrsco/whoisproxy/master.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/xandco/whoisproxy.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/xandco/whoisproxy.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/xandco/whoisproxy/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
 
-[link-packagist]: https://packagist.org/packages/btrsco/whoisproxy
-[link-downloads]: https://packagist.org/packages/btrsco/whoisproxy
-[link-travis]: https://travis-ci.org/btrsco/whoisproxy
+[link-packagist]: https://packagist.org/packages/xandco/whoisproxy
+[link-downloads]: https://packagist.org/packages/xandco/whoisproxy
+[link-travis]: https://travis-ci.org/xandco/whoisproxy
 [link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/btrsco
+[link-author]: https://github.com/xandco
 [link-contributors]: ../../contributors

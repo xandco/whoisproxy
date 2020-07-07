@@ -1,6 +1,6 @@
 <?php
 
-namespace btrsco\WhoisProxy\Facades;
+namespace xandco\WhoisProxy\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

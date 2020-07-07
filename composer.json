@@ -1,15 +1,15 @@
 {
-    "name": "btrsco/whoisproxy",
+    "name": "xandco/whoisproxy",
     "description": "Whois Proxy, queries whois servers over http proxy.",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Miguel Batres Santellano",
-            "email": "miguel@xand.co",
-            "homepage": "https://xand.co"
+            "email": "miguel@batres.co",
+            "homepage": "https://batres.co"
         }
     ],
-    "homepage": "https://github.com/btrsco/whoisproxy",
+    "homepage": "https://github.com/xandco/whoisproxy",
     "keywords": ["Laravel", "WhoisProxy"],
     "require": {
         "illuminate/support": "~5|~6|~7"
@@ -22,21 +22,21 @@
     },
     "autoload": {
         "psr-4": {
-            "btrsco\\WhoisProxy\\": "src/"
+            "xandco\\WhoisProxy\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "btrsco\\WhoisProxy\\Tests\\": "tests"
+            "xandco\\WhoisProxy\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "btrsco\\WhoisProxy\\WhoisProxyServiceProvider"
+                "xandco\\WhoisProxy\\WhoisProxyServiceProvider"
             ],
             "aliases": {
-                "WhoisProxy": "btrsco\\WhoisProxy\\Facades\\WhoisProxy"
+                "WhoisProxy": "xandco\\WhoisProxy\\Facades\\WhoisProxy"
             }
         }
     }

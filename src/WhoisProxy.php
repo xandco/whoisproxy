@@ -1,8 +1,8 @@
 <?php
 
-namespace btrsco\WhoisProxy;
+namespace xandco\WhoisProxy;
 
-use btrsco\WhoisProxy\Exceptions\WhoisProxyException;
+use xandco\WhoisProxy\Exceptions\WhoisProxyException;
 
 class WhoisProxy
 {
