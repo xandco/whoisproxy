@@ -47,8 +47,8 @@ $whoisProxy = new WhoisProxy( $options = [] );
 Then call `query()` or `deepQuery()` method to query the whois server:
 
 ``` php
-$domainParser->query( 'example.com', $server );
-$domainParser->deepQuery( 'example.com' );
+$whoisProxy->query( 'example.com', $server );
+$whoisProxy->deepQuery( 'example.com' );
 ```
 
 Here is an example of the output:
