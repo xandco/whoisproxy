@@ -45,7 +45,7 @@ class WhoisProxy
         $this->setProxyHost( $options['host'] ?? config('whoisproxy.proxy.host') );
         $this->setProxyPort( $options['port'] ?? config('whoisproxy.proxy.port') );
         $this->setTimeout( $options['timeout'] ?? config('whoisproxy.connection.timeout') );
-        $this->setDefaultServer( $options['iana'] ?? config('whoisproxy.connection.iana') );
+        $this->setDefaultServer( $options['server'] ?? config('whoisproxy.connection.default') );
         $this->setMaxLoop( $options['max_loops'] ?? config('whoisproxy.connection.max-loops') );
     }
 
