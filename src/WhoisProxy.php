@@ -180,10 +180,29 @@ class WhoisProxy
      * @param $haystack
      * @return string|null
      */
-    public function parseValue( $key, $haystack )
+    protected function parseValue( $key, $haystack )
     {
         preg_match_all( "/$key(.*)\n/mU", strtolower( $haystack ), $matches, PREG_SET_ORDER, 0 );
         return empty( $matches ) ? null : trim( $matches[0][1] );
+    }
+
+    /**
+     * Get Appropriate Whois Server for Future Queries
+     * @param $domain
+     * @param null $server
+     * @return string|null
+     * @throws WhoisProxyException
+     */
+    public function getWhoisServer( $domain, $server = null )
+    {
+        $whoisData = $this->query( $domain, $server );
+
+        foreach ( config('whoisproxy.patterns.whois') as $pattern ) {
+            $match = $this->parseValue( $pattern, $whoisData );
+            if ( !is_null( $match ) ) return $match;
+        }
+
+        return null;
     }
 
     /**
@@ -193,7 +212,7 @@ class WhoisProxy
      * @return string
      * @throws WhoisProxyException
      */
-    public function queryWhois( $domain, $server = null )
+    public function query( $domain, $server = null )
     {
         $connection = $this->initializeConnection();
         $whoisData  = "";
@@ -224,21 +243,16 @@ class WhoisProxy
     }
 
     /**
-     * Get Appropriate Whois Server for Future Queries
+     * Query Registrar Whois Server for Information
      * @param $domain
-     * @param null $server
-     * @return string|null
+     * @return string
      * @throws WhoisProxyException
      */
-    public function getWhoisServer( $domain, $server = null )
+    public function deepQuery( $domain )
     {
-        $whoisData = $this->queryWhois( $domain, $server );
+        $registry  = $this->getWhoisServer( $domain );
+        $registrar = $this->getWhoisServer( $domain, $registry );
 
-        foreach ( config('whoisproxy.patterns.whois') as $pattern ) {
-            $match = $this->parseValue( $pattern, $whoisData );
-            if ( !is_null( $match ) ) return $match;
-        }
-
-        return null;
+        return $this->query( $domain, $registrar ?? $registry );
     }
 }
