@@ -31,7 +31,7 @@ class WhoisProxyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/whoisproxy.php', 'whoisproxy');
+        $this->mergeConfigFrom(__DIR__ . '/../config/whoisproxy.php', 'whoisproxy');
 
         // Register the service the package provides.
         $this->app->singleton('whoisproxy', function ($app) {
@@ -48,7 +48,7 @@ class WhoisProxyServiceProvider extends ServiceProvider
     {
         return ['whoisproxy'];
     }
-    
+
     /**
      * Console-specific booting.
      *
@@ -58,7 +58,7 @@ class WhoisProxyServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/whoisproxy.php' => config_path('whoisproxy.php'),
+            __DIR__ . '/../config/whoisproxy.php' => config_path('whoisproxy.php'),
         ], 'whoisproxy.config');
 
         // Publishing the views.
