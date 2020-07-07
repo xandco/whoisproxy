@@ -3,7 +3,7 @@
 return [
     'connection' => [
         'timeout' => 10,
-        'iana' => 'whois.iana.org',
+        'default' => 'whois.iana.org',
         'max-loops' => 512
     ],
     'proxy' => [
