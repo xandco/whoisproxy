@@ -44,10 +44,19 @@ use xandco\WhoisProxy\WhoisProxy;
 $whoisProxy = new WhoisProxy( $options = [] );
 ```
 
-Then call `query()` or `deepQuery()` method to query the whois server:
+Then call `query()` method to query a whois server:
 
 ``` php
-$whoisProxy->query( 'example.com', $server );
+// This will query the default whois server
+$whoisProxy->query( 'example.com' );
+
+// You can also provide a specific whois server
+$whoisProxy->query( 'example.com', 'whois.verisign-grs.com' );
+```
+
+You can also call the `deepQuery()` method to automatically find and query the most authoritative whois server for the specified domain (usually the registrars whois server):
+
+``` php
 $whoisProxy->deepQuery( 'example.com' );
 ```
 
