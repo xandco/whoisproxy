@@ -2,6 +2,12 @@
 
 All notable changes to `WhoisProxy` will be documented in this file.
 
+## Version 0.1.5
+
+Released: `07/08/2020`
+
+- Updated Documentation
+
 ## Version 0.1.4
 
 Released: `07/07/2020`
