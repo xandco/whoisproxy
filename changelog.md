@@ -2,6 +2,14 @@
 
 All notable changes to `WhoisProxy` will be documented in this file.
 
+## Version 1.0.0
+
+Released: `11/29/2020`
+
+- Beautify Code a Bit
+- Remove `xandco` from Namespace
+- Update Documentation
+
 ## Version 0.1.5
 
 Released: `07/08/2020`

@@ -24,14 +24,14 @@ This service provider must be installed (if using anything below Laravel 5.5)
 // config/app.php
 
 'providers' => [
-    xandco\WhoisProxy\WhoisProxyServiceProvider::class,
+    WhoisProxy\WhoisProxyServiceProvider::class,
 ];
 ```
 
 Publish and customize configuration file with:
 
 ``` bash
-$ php artisan vendor:publish --provider="xandco\WhoisProxy\WhoisProxyServiceProvider"
+$ php artisan vendor:publish --provider="WhoisProxy\WhoisProxyServiceProvider"
 ```
 
 ## Usage
@@ -39,7 +39,7 @@ $ php artisan vendor:publish --provider="xandco\WhoisProxy\WhoisProxyServiceProv
 Create new `WhoisProxy` object:
 
 ``` php
-use xandco\WhoisProxy\WhoisProxy;
+use WhoisProxy\WhoisProxy;
 ...
 $whoisProxy = new WhoisProxy( $options = [] );
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace xandco\WhoisProxy;
+namespace WhoisProxy;
 
 use Illuminate\Support\ServiceProvider;
 
