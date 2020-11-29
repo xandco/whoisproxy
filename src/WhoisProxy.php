@@ -8,36 +8,42 @@ class WhoisProxy
 {
     /**
      * Proxy Host / IP
-     * @var $_proxyHost
+     *
+     * @var string
      */
     protected $_proxyHost;
 
     /**
      * Proxy Port
-     * @var $_proxyPort
+     *
+     * @var int
      */
     protected $_proxyPort;
 
     /**
      * Socket Connection Timeout
-     * @var $_timeout
+     *
+     * @var int
      */
     protected $_timeout;
 
     /**
      * Default Authoritative Server
-     * @var $_defaultServer
+     *
+     * @var string
      */
     protected $_defaultServer;
 
     /**
      * Max Loop Count
-     * @var $_maxLoop
+     *
+     * @var int
      */
     protected $_maxLoop;
 
     /**
      * WhoisProxy constructor.
+     *
      * @param $options
      */
     public function __construct( $options = [] )
@@ -51,6 +57,7 @@ class WhoisProxy
 
     /**
      * Get Proxy Host / IP
+     *
      * @return mixed
      */
     protected function getProxyHost()
@@ -60,6 +67,7 @@ class WhoisProxy
 
     /**
      * Set Proxy Host / IP
+     *
      * @param mixed $proxyHost
      */
     protected function setProxyHost( $proxyHost ): void
@@ -69,6 +77,7 @@ class WhoisProxy
 
     /**
      * Get Proxy Port
+     *
      * @return mixed
      */
     protected function getProxyPort()
@@ -78,6 +87,7 @@ class WhoisProxy
 
     /**
      * Set Proxy Port
+     *
      * @param mixed $proxyPort
      */
     protected function setProxyPort( $proxyPort ): void
@@ -87,6 +97,7 @@ class WhoisProxy
 
     /**
      * Get Socket Connection Timeout
+     *
      * @return mixed
      */
     protected function getTimeout()
@@ -96,6 +107,7 @@ class WhoisProxy
 
     /**
      * Set Socket Connection Timeout
+     *
      * @param mixed $timeout
      */
     protected function setTimeout( $timeout ): void
@@ -105,6 +117,7 @@ class WhoisProxy
 
     /**
      * Get Authoritative Server
+     *
      * @return mixed
      */
     protected function getDefaultServer()
@@ -114,6 +127,7 @@ class WhoisProxy
 
     /**
      * Set Authoritative Server
+     *
      * @param mixed $defaultServer
      */
     protected function setDefaultServer( $defaultServer ): void
@@ -123,6 +137,7 @@ class WhoisProxy
 
     /**
      * Get Max Loop Count
+     *
      * @return mixed
      */
     protected function getMaxLoop()
@@ -132,6 +147,7 @@ class WhoisProxy
 
     /**
      * Set Max Loop Count
+     *
      * @param mixed $maxLoop
      */
     protected function setMaxLoop( $maxLoop ): void
@@ -141,6 +157,7 @@ class WhoisProxy
 
     /**
      * Return Http Status Code from String
+     *
      * @param $httpStatus
      * @return string|null
      */
@@ -152,6 +169,7 @@ class WhoisProxy
 
     /**
      * Initialize HTTP Proxy Connection
+     *
      * @return mixed
      */
     protected function initializeConnection()
@@ -167,6 +185,7 @@ class WhoisProxy
 
     /**
      * Terminate HTTP Proxy Connection
+     *
      * @param $connection
      */
     protected function terminateConnection( $connection )
@@ -176,6 +195,7 @@ class WhoisProxy
 
     /**
      * Parse Line of Raw Whois Result
+     *
      * @param $key
      * @param $haystack
      * @return string|null
@@ -188,6 +208,7 @@ class WhoisProxy
 
     /**
      * Get Appropriate Whois Server for Future Queries
+     *
      * @param $domain
      * @param null $server
      * @return string|null
@@ -207,6 +228,7 @@ class WhoisProxy
 
     /**
      * Query Whois Server for Information
+     *
      * @param $domain
      * @param null $server
      * @return string
@@ -244,6 +266,7 @@ class WhoisProxy
 
     /**
      * Query Registrar Whois Server for Information
+     *
      * @param $domain
      * @return string
      * @throws WhoisProxyException
