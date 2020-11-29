@@ -22,21 +22,21 @@
     },
     "autoload": {
         "psr-4": {
-            "xandco\\WhoisProxy\\": "src/"
+            "WhoisProxy\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "xandco\\WhoisProxy\\Tests\\": "tests"
+            "WhoisProxy\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "xandco\\WhoisProxy\\WhoisProxyServiceProvider"
+                "WhoisProxy\\WhoisProxyServiceProvider"
             ],
             "aliases": {
-                "WhoisProxy": "xandco\\WhoisProxy\\Facades\\WhoisProxy"
+                "WhoisProxy": "WhoisProxy\\Facades\\WhoisProxy"
             }
         }
     }

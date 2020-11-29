@@ -1,6 +1,6 @@
 <?php
 
-namespace xandco\WhoisProxy\Exceptions;
+namespace WhoisProxy\Exceptions;
 
 use Exception;
 
